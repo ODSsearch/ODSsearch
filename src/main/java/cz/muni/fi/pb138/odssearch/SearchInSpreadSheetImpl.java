@@ -18,7 +18,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         return term;
     }
 
-    public void setTerm(String term) {      //for reusability
+    public void setTerm(String term) {
         this.term = term;
     }
 

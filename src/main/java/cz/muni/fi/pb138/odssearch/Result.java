@@ -19,7 +19,7 @@ public class Result {
         return sheetName;
     }
 
-    public List<List<String>> getRows() {
+    public List<List<String>> getRows() {   //TODO unmodifiable? alebo zmazat?
         return rows;
     }
 

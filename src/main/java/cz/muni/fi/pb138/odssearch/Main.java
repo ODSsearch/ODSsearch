@@ -12,9 +12,6 @@ import java.io.InputStreamReader;
  * Class to run SearchInSpreadSheetImpl as console app.
  */
 public class Main {
-    // /home/karbo/IdeaProjects/pokusODS/pokus/src/main/resources/tableFile.ods
-
-
     public static void main(String[] args) {
         try{
             // Load the file.
@@ -31,8 +28,10 @@ public class Main {
             //print results
             System.out.println("searching for < " + term + " >");
             for (Result result : spreadSheet.getResults() ) {
-                System.out.println("Sheet: " + result.getSheetName());
-                result.printRows(); //TODO - when no rows found (rows are null)
+                if (!result.getRows().isEmpty()) {
+                    System.out.println("Sheet: " + result.getSheetName());
+                    result.printRows(); //TODO - when no rows found (rows are null)
+                }
             }
 
         } catch(Throwable ex){

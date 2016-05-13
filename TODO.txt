@@ -1,9 +1,2 @@
 
-
-pridat interface
-
 printSheet -> parameter cislo sheetu
-vyhodit veci z konstruktoru do printAllSheets; searchAllSheets
-
-toString
-equals/hash
