@@ -25,11 +25,11 @@ public class Main {
             System.out.print("Enter term: ");
             String term = reader.readLine();
 
-            SearchInSpreadSheetImpl spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term);
+            SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term);
             spreadSheet.searchAllSheets();
             spreadSheet.printAllSheets();
             //print results
-            System.out.println("searching for < " + spreadSheet.getTerm() + " >");
+            System.out.println("searching for < " + term + " >");
             for (Result result : spreadSheet.getResults() ) {
                 System.out.println("Sheet: " + result.getSheetName());
                 result.printRows(); //TODO - when no rows found (rows are null)
