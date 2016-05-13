@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07a0c08b-7f6b-4533-88e6-3cd4741c0d38" name="Default" comment="delete XML.java">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="07a0c08b-7f6b-4533-88e6-3cd4741c0d38" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ODSsearch.iws" />
@@ -52,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -801,7 +801,7 @@
       <workItem from="1463142412211" duration="403000" />
       <workItem from="1463144490735" duration="108000" />
       <workItem from="1463144717448" duration="1132000" />
-      <workItem from="1463146724720" duration="1153000" />
+      <workItem from="1463146724720" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="delete XML.java">
       <created>1463147794019</created>
@@ -810,11 +810,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463147794019</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gitignore file">
+      <created>1463147890559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463147890559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4441000" />
+    <option name="totallyTimeSpent" value="4473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="-9" width="1860" height="1098" extended-state="6" />
@@ -861,7 +868,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="delete XML.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete XML.java" />
+    <MESSAGE value="gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1031,7 +1039,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
         </state>
       </provider>
