@@ -4,13 +4,14 @@ import org.jopendocument.dom.spreadsheet.Sheet;
 import org.jopendocument.dom.spreadsheet.SpreadSheet;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by karbo on 13.5.16.
  */
 public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
 
-    private ArrayList<Result> results = new ArrayList<>();
+    private List<Result> results = new ArrayList<>();
     private SpreadSheet spreadSheet;
     private String term;
 
@@ -18,23 +19,23 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         int cols = sheet.getColumnCount();
         int rows = sheet.getRowCount();
 
-        System.out.println("List: " + sheet.getName());
+        System.out.println("Sheet: " + sheet.getName());
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 System.out.print(" " + sheet.getValueAt(col, row).toString());
             }
-            System.out.println(" ");
+            System.out.println();
         }
 
     }
 
-    private String[] getRow(int row, Sheet sheet) {
+    private List<String> getRow(int row, Sheet sheet) {
         int cols = sheet.getColumnCount();
-        String[] line = new String[cols];
+        List<String> line = new ArrayList<>();
 
         for (int i = 0; i < cols; i++) {
-            line[i] = sheet.getValueAt(i, row).toString();
+            line.add(sheet.getValueAt(i, row).toString());
         }
         return line;
 
@@ -58,7 +59,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     }
 
     @Override
-    public ArrayList<Result> searchAllSheets(){
+    public List<Result> searchAllSheets(){
         for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
             results.add(searchSheet(spreadSheet.getSheet(i), term));
         }

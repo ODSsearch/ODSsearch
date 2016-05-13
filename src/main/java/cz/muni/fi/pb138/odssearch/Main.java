@@ -6,7 +6,7 @@ import org.jopendocument.dom.spreadsheet.SpreadSheet;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Karolína Božková on 3.5.16.
@@ -19,7 +19,6 @@ public class Main {
     public static void main(String[] args) {
         try{
             // Load the file.
-//            File file = new File(Main.class.getClassLoader().getResource("tableFile.ods").getFile());
             File file = new File("src/main/resources/tableFile.ods");
 
             //read input
@@ -28,13 +27,14 @@ public class Main {
             String term = reader.readLine();
 
             SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term);
-            ArrayList<Result> results = spreadSheet.searchAllSheets();
-
+            List<Result> results = spreadSheet.searchAllSheets();
 
             //print results
             for (Result result : results) {
-                System.out.println("Sheet: " + result.getSheetName());
-                result.printRows(); //TODO - when no rows found (rows are null)
+                if (!result.getRows().isEmpty()) {
+                    System.out.println("Sheet: " + result.getSheetName());
+                    result.printRows();
+                }
             }
 
         } catch(Throwable ex){
