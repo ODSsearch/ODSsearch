@@ -30,9 +30,10 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                System.out.print(" " + sheet.getValueAt(col, row).toString());
+                if (col != 0)  System.out.print(", ");
+                System.out.print(sheet.getValueAt(col, row).toString());
             }
-            System.out.println(" ");
+            System.out.println();
         }
     }
 
