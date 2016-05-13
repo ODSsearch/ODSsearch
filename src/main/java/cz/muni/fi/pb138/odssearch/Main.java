@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 
 /**
  * Created by Karolína Božková on 3.5.16.
- * Class to run SearchInSpreadSheet as console app.
+ * Class to run SearchInSpreadSheetImpl as console app.
  */
 public class Main {
     // /home/karbo/IdeaProjects/pokusODS/pokus/src/main/resources/tableFile.ods
@@ -25,7 +25,7 @@ public class Main {
             System.out.print("Enter term: ");
             String term = reader.readLine();
 
-            SearchInSpreadSheet spreadSheet = new SearchInSpreadSheet(SpreadSheet.createFromFile(file), term);
+            SearchInSpreadSheetImpl spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term);
             spreadSheet.searchAllSheets();
             spreadSheet.printAllSheets();
             //print results
