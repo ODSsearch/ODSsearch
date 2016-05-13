@@ -4,18 +4,22 @@ import org.jopendocument.dom.spreadsheet.Sheet;
 import org.jopendocument.dom.spreadsheet.SpreadSheet;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by karbo on 4.5.16.
  */
 public class SearchInSpreadSheet {
-    private ArrayList<Result> results = new ArrayList<Result>();
+    private List<Result> results = new ArrayList<>();
+    private SpreadSheet spreadSheet;
+    private int numSheets;
+    private String term;
 
     private void printSheet(Sheet sheet) {
         int cols = sheet.getColumnCount();
         int rows = sheet.getRowCount();
 
-        System.out.println("List: " + sheet.getName());
+        System.out.println("Sheet: " + sheet.getName());
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
@@ -23,19 +27,17 @@ public class SearchInSpreadSheet {
             }
             System.out.println(" ");
         }
-
     }
 
-    private String[] getRow(int row, Sheet sheet) {
+    private List<String> getRow(int row, Sheet sheet) {
         int cols = sheet.getColumnCount();
-        String[] line = new String[cols];
+        List<String> line = new ArrayList<>();
 
         for (int i = 0; i < cols; i++) {
-            line[i] = sheet.getValueAt(i, row).toString();
+//            line[i] = sheet.getValueAt(i, row).toString();
+            line.add(sheet.getValueAt(i, row).toString());
         }
         return line;
-
-
     }
 
     private Result searchSheet(Sheet sheet, String term) {
@@ -51,27 +53,35 @@ public class SearchInSpreadSheet {
             }
         }
         return result;
-
     }
 
-
-    public SearchInSpreadSheet(SpreadSheet spreadSheet, String term) {
-        int numSheets = spreadSheet.getSheetCount();
-
+    public void printAllSheets() {
         //print all sheets - not needed
         for (int i = 0; i < numSheets; i++) {
             printSheet(spreadSheet.getSheet(i));
             System.out.println("---");
         }
+    }
 
-        System.out.println("searching for < " + term + " >");
+    public void searchAllSheets () {
         //Search in all Sheets
         for (int i = 0; i < numSheets; i++) {
             results.add(searchSheet(spreadSheet.getSheet(i), term));
         }
     }
 
-    public ArrayList<Result> getResults() {
+
+    public SearchInSpreadSheet(SpreadSheet spreadSheet, String term) {
+        this.spreadSheet = spreadSheet;
+        this.numSheets = spreadSheet.getSheetCount();
+        this.term = term;
+
+        printAllSheets();
+
+        searchAllSheets();
+    }
+
+    public List<Result> getResults() {
         return results;
     }
 }

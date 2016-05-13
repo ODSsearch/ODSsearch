@@ -28,6 +28,7 @@ public class Main {
 
             SearchInSpreadSheet spreadSheet = new SearchInSpreadSheet(SpreadSheet.createFromFile(file), term);
             //print results
+            System.out.println("searching for < " + term + " >");
             for (Result result : spreadSheet.getResults() ) {
                 System.out.println("Sheet: " + result.getSheetName());
                 result.printRows(); //TODO - when no rows found (rows are null)

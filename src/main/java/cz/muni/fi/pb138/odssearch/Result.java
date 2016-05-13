@@ -1,6 +1,7 @@
 package cz.muni.fi.pb138.odssearch;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Karolína Božková on 10.5.16.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Result {
     private String sheetName;
-    private ArrayList<String[]> rows = new ArrayList<String[]>();
+    private List<List<String>> rows = new ArrayList<List<String>>();
 
     public Result(String sheetName) {
         this.sheetName = sheetName;
@@ -18,20 +19,25 @@ public class Result {
         return sheetName;
     }
 
-    public ArrayList<String[]> getRows() {
+    public List<List<String>> getRows() {
         return rows;
     }
 
-    public void appendRow(String[] row){
+    public void appendRow(List<String> row){
         rows.add(row);
     }
 
     public void printRows(){
-        for (String[] row: rows) {
+        for (List<String> row: rows) {
             for (String item : row) {
                 System.out.print(item + ", ");
             }
             System.out.println(" ");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Result of search in spreadsheet" + sheetName;
     }
 }
