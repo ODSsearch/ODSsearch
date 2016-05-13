@@ -1,15 +1,12 @@
 package cz.muni.fi.pb138.odssearch;
 
-import java.util.List;
+import org.jopendocument.dom.spreadsheet.SpreadSheet;
+
+import java.util.ArrayList;
 
 /**
- * Created by artemis on 13.05.2016.
+ * Created by karbo on 13.5.16.
  */
 public interface SearchInSpreadSheet {
-
-    void searchAllSheets();
-
-    void printAllSheets();
-
-    List<Result> getResults();
+    ArrayList<Result> searchAllSheets();
 }
