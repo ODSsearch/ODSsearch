@@ -18,7 +18,6 @@ public class Main {
     public static void main(String[] args) {
         try{
             // Load the file.
-//            File file = new File(Main.class.getClassLoader().getResource("tableFile.ods").getFile());
             File file = new File("src/main/resources/tableFile.ods");
 
             //read input
@@ -27,8 +26,10 @@ public class Main {
             String term = reader.readLine();
 
             SearchInSpreadSheet spreadSheet = new SearchInSpreadSheet(SpreadSheet.createFromFile(file), term);
+            spreadSheet.searchAllSheets();
+            spreadSheet.printAllSheets();
             //print results
-            System.out.println("searching for < " + term + " >");
+            System.out.println("searching for < " + spreadSheet.getTerm() + " >");
             for (Result result : spreadSheet.getResults() ) {
                 System.out.println("Sheet: " + result.getSheetName());
                 result.printRows(); //TODO - when no rows found (rows are null)
@@ -38,11 +39,6 @@ public class Main {
             System.out.println(ex.toString());
         }
 
-
-
     }
-
-
-
 
 }

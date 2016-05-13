@@ -13,6 +13,15 @@ public class SearchInSpreadSheet {
     private List<Result> results = new ArrayList<>();
     private SpreadSheet spreadSheet;
     private int numSheets;
+
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {      //for reusability
+        this.term = term;
+    }
+
     private String term;
 
     private void printSheet(Sheet sheet) {
@@ -75,10 +84,6 @@ public class SearchInSpreadSheet {
         this.spreadSheet = spreadSheet;
         this.numSheets = spreadSheet.getSheetCount();
         this.term = term;
-
-        printAllSheets();
-
-        searchAllSheets();
     }
 
     public List<Result> getResults() {
