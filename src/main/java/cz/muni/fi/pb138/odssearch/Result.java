@@ -28,11 +28,16 @@ public class Result {
     }
 
     public void printRows(){
-        for (List<String> row: rows) {
-            for (String item : row) {
-                System.out.print(item + ", ");
+        if (rows.isEmpty()){
+            System.out.println("No matches found.");
+        }
+        else {
+            for (List<String> row : rows) {
+                for (String item : row) {
+                    System.out.print(item + ", ");
+                }
+                System.out.println(" ");
             }
-            System.out.println(" ");
         }
     }
 
