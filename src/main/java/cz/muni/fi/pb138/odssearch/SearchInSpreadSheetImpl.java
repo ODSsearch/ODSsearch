@@ -4,6 +4,7 @@ import org.jopendocument.dom.spreadsheet.Sheet;
 import org.jopendocument.dom.spreadsheet.SpreadSheet;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -63,7 +64,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
             results.add(searchSheet(spreadSheet.getSheet(i), term));
         }
-        return results;
+        return Collections.unmodifiableList(results);
     }
 
     public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String term) {

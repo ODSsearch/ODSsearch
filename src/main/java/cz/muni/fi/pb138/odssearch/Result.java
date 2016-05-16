@@ -1,6 +1,7 @@
 package cz.muni.fi.pb138.odssearch;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ public class Result {
         return sheetName;
     }
 
-    public List<List<String>> getRows() {   //TODO unmodifiable? alebo zmazat?
-        return rows;
+    public List<List<String>> getRows() {
+        return Collections.unmodifiableList(rows);
     }
 
     public void appendRow(List<String> row){
