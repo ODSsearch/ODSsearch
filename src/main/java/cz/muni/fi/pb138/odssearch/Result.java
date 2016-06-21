@@ -3,6 +3,9 @@ package cz.muni.fi.pb138.odssearch;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.jopendocument.dom.spreadsheet.Sheet;
+import org.jopendocument.dom.spreadsheet.SpreadSheet;
+
 
 /**
  * Created by Karolína Božková on 10.5.16.
@@ -11,9 +14,15 @@ import java.util.List;
 public class Result {
     private String sheetName;
     private List<List<String>> rows = new ArrayList<List<String>>();
+    private List<String> header = new ArrayList<>();
 
-    public Result(String sheetName) {
+    public Result(String sheetName, List<String> header) {
         this.sheetName = sheetName;
+        this.header = header;
+    }
+
+    public List<String> getHeader() {
+        return header;
     }
 
     public String getSheetName() {

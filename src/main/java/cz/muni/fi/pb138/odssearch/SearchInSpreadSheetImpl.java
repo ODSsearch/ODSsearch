@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static java.lang.Boolean.FALSE;
+
 /**
  * Created by Karolína Božková on 13.5.16.
  */
@@ -15,7 +17,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private List<Result> results = new ArrayList<>();
     private SpreadSheet spreadSheet;
     private String term;
-    private boolean sensitive;
+    private boolean sensitive = FALSE;
 
     private void printSheet(Sheet sheet) {
         int cols = sheet.getColumnCount();
@@ -47,7 +49,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private Result searchSheet(Sheet sheet, String term) {
         int cols = sheet.getColumnCount();
         int rows = sheet.getRowCount();
-        Result result = new Result(sheet.getName());
+        Result result = new Result(sheet.getName(), getRow(0,sheet));
 
         for (int row = 1; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
