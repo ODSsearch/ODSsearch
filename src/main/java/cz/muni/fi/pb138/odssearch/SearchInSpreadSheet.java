@@ -5,7 +5,7 @@ import org.jopendocument.dom.spreadsheet.SpreadSheet;
 import java.util.List;
 
 /**
- * Created by karbo on 13.5.16.
+ * Created by Karolína Božková on 13.5.16.
  */
 public interface SearchInSpreadSheet {
 

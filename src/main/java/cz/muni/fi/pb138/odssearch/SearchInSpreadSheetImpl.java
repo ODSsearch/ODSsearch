@@ -8,13 +8,14 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by karbo on 13.5.16.
+ * Created by Karolína Božková on 13.5.16.
  */
 public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
 
     private List<Result> results = new ArrayList<>();
     private SpreadSheet spreadSheet;
     private String term;
+    private boolean sensitive;
 
     private void printSheet(Sheet sheet) {
         int cols = sheet.getColumnCount();
@@ -50,9 +51,17 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
 
         for (int row = 1; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                if (sheet.getValueAt(col, row).toString().contains(term)) {
-                    result.appendRow(getRow(row, sheet));
+                if (sensitive) {
+                    if (sheet.getValueAt(col, row).toString().contains(term)) {
+                        result.appendRow(getRow(row, sheet));
+                    }
                 }
+                else {
+                    if (sheet.getValueAt(col, row).toString().toLowerCase().contains(term.toLowerCase())) {
+                        result.appendRow(getRow(row, sheet));
+                    }
+                }
+
             }
         }
         return result;
@@ -67,9 +76,10 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         return Collections.unmodifiableList(results);
     }
 
-    public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String term) {
+    public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String term, boolean sensitive) {
         this.spreadSheet = spreadSheet;
         this.term = term;
+        this.sensitive = sensitive;
     }
 
 }
