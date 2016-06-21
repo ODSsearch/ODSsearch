@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static java.lang.Boolean.FALSE;
+
 
 /**
  * Created by Karolína Božková on 13.5.16.
@@ -17,22 +17,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private List<Result> results = new ArrayList<>();
     private SpreadSheet spreadSheet;
     private String term;
-    private boolean sensitive = FALSE;
-
-    private void printSheet(Sheet sheet) {
-        int cols = sheet.getColumnCount();
-        int rows = sheet.getRowCount();
-
-        System.out.println("Sheet: " + sheet.getName());
-
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                System.out.print(" " + sheet.getValueAt(col, row).toString());
-            }
-            System.out.println();
-        }
-
-    }
+    private boolean sensitive = false;
 
     private List<String> getRow(int row, Sheet sheet) {
         int cols = sheet.getColumnCount();
@@ -42,8 +27,6 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
             line.add(sheet.getValueAt(i, row).toString());
         }
         return line;
-
-
     }
 
     private Result searchSheet(Sheet sheet, String term) {
@@ -63,11 +46,9 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
                         result.appendRow(getRow(row, sheet));
                     }
                 }
-
             }
         }
         return result;
-
     }
 
     @Override

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07a0c08b-7f6b-4533-88e6-3cd4741c0d38" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Result.java" afterPath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Result.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java" afterPath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java" />
     </list>
     <ignored path="ODSsearch.iws" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="558">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,7 +45,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#256#257#0" expanded="false" />
+                <element signature="e#318#319#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,7 +59,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +101,8 @@
       <file leaf-file-name="SearchInSpreadSheetImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="370">
+              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,10 +133,11 @@
       <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="118">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#687#688#0" expanded="true" />
                 <element signature="e#716#717#0" expanded="true" />
               </folding>
             </state>
@@ -162,10 +169,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/target/classes/cz/muni/fi/pb138/odssearch/Result.class" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java" />
       </list>
     </option>
   </component>
@@ -800,7 +807,7 @@
       <workItem from="1463420922555" duration="614000" />
       <workItem from="1463421961646" duration="100000" />
       <workItem from="1466438195379" duration="1399000" />
-      <workItem from="1466514906784" duration="2681000" />
+      <workItem from="1466514906784" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="delete XML.java">
       <created>1463147794019</created>
@@ -844,11 +851,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466516575180</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="header added to result">
+      <created>1466517840909</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1466517840909</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12540000" />
+    <option name="totallyTimeSpent" value="14659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1368" height="745" extended-state="6" />
@@ -902,7 +916,8 @@
     <MESSAGE value="Result &gt; printRows &gt; no matches found added" />
     <MESSAGE value="unmodifiableList() u Result a SearchInSpreadSheet" />
     <MESSAGE value="sensitivity added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sensitivity added" />
+    <MESSAGE value="header added to result" />
+    <option name="LAST_COMMIT_MESSAGE" value="header added to result" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -978,6 +993,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1048,6 +1064,7 @@
           <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1085,6 +1102,7 @@
           <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1122,6 +1140,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1153,6 +1172,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1184,6 +1204,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1215,6 +1236,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
           </folding>
         </state>
@@ -1343,7 +1365,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1351,16 +1375,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#318#319#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1377,19 +1395,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="118">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
             <element signature="e#716#717#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/muni/fi/pb138/odssearch/SearchInSpreadSheetImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+        <state relative-caret-position="370">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

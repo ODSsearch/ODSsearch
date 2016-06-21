@@ -15,7 +15,6 @@ import java.util.List;
 public class Main {
     // /home/karbo/IdeaProjects/pokusODS/pokus/src/main/resources/tableFile.ods
 
-
     public static void main(String[] args) {
         try{
             // Load the file.
@@ -26,7 +25,7 @@ public class Main {
             System.out.print("Enter term: ");
             String term = reader.readLine();
 
-            SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term);
+            SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(file), term, false);
             List<Result> results = spreadSheet.searchAllSheets();
 
             //print results
@@ -36,7 +35,6 @@ public class Main {
                     result.printRows();
                 }
             }
-
         } catch(Throwable ex){
             System.out.println(ex.toString());
         }
