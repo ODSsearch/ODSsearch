@@ -29,10 +29,10 @@ public class Main {
             List<Result> results = spreadSheet.searchAllSheets();
 
             //print results
+            System.out.println("printing results... ");
             for (Result result : results) {
                 if (!result.getRows().isEmpty()) {
-                    System.out.println("Sheet: " + result.getSheetName());
-                    result.printRows();
+                    System.out.println(result.toString());
                 }
             }
         } catch(Throwable ex){
