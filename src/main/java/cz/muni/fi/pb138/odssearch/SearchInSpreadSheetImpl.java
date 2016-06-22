@@ -17,8 +17,16 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private String expression;
     private boolean sensitive = false;
 
+    private int getColumnCount(Sheet sheet){
+        int columnCount = 1;
+        while (!sheet.getValueAt(columnCount,0).toString().isEmpty()){
+            columnCount++;
+        }
+        return columnCount;
+    }
+
     private List<String> getRow(int row, Sheet sheet) {
-        int cols = sheet.getColumnCount();
+        int cols = getColumnCount(sheet);
         List<String> line = new ArrayList<String>();
 
         for (int i = 0; i < cols; i++) {
@@ -92,7 +100,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
      */
     public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String expression, boolean sensitive) {
         this.spreadSheet = spreadSheet;
-        this.expression = expression;
+        this.expression = expression.trim();
         this.sensitive = sensitive;
     }
 
