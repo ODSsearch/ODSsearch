@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-public class FileUploadController {
+public class WebSearchController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public String searchForm(Model model) {
@@ -27,15 +27,16 @@ public class FileUploadController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/")
-    public String handleFileUpload(@RequestParam("searchExpression") String searchExpression,
+    public String handleSearchForm(@RequestParam("searchExpression") String searchExpression,
                                    @RequestParam("file") MultipartFile file,
+                                   @RequestParam(value = "caseSensitive", required = false) boolean caseSensitive,
                                    RedirectAttributes redirectAttributes) throws IOException {
 
 
         if (!file.isEmpty()) {
             try {
                 File source = multipartToFile(file);
-                SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(source), searchExpression);
+                SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(source), searchExpression, caseSensitive);
 
                 List<Result> results = spreadSheet.searchAllSheets();
                 redirectAttributes.addFlashAttribute("results", results);

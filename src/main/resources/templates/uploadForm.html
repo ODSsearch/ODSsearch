@@ -38,10 +38,15 @@
                 <input type="text" class="form-control" id="searchExpression" name="searchExpression"
                        placeholder="Search Expression"/>
             </div>
+
+            <div class="form-group">
+                <input type="checkbox" name="caseSensitive" id="caseSensitive"/>
+                <label for="caseSensitive">Case Sensitive</label>
+            </div>
+
             <div class="form-group">
                 <label for="file">File input</label>
                 <input type="file" name="file" id="file"/>
-
             </div>
             <input class="btn btn-primary" type="submit" value="Search"/>
 
@@ -53,9 +58,10 @@
             <li th:each="result : ${results}">
                 <span th:text="${result.sheetName} +': '+ ${#lists.size(result.rows)}"></span>
                 <table class="table">
+                    <tr>
+                        <th th:each="item: ${result.header}" th:text="${item}"></th>
+                    </tr>
                     <tr th:each="row: ${result.rows}">
-
-
                         <td th:each="item: ${row}" th:text="${item}"></td>
                     </tr>
                 </table>
