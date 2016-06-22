@@ -18,8 +18,8 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private boolean sensitive = false;
 
     private int getColumnCount(Sheet sheet){
-        int columnCount = 1;
-        while (!sheet.getValueAt(columnCount,0).toString().isEmpty()){
+        int columnCount = 0;
+        while (columnCount < sheet.getColumnCount() && !sheet.getValueAt(columnCount,0).toString().isEmpty()){
             columnCount++;
         }
         return columnCount;
@@ -70,13 +70,9 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         }
         return result;
     }
-
+    
     @Override
     public List<Result> searchAllSheets() throws ServiceFailureException {
-        
-        if(spreadSheet == null) {
-            throw new ServiceFailureException("Null spread sheet to be searched");
-        }
         
         if (sensitive){
             for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
@@ -97,11 +93,26 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
      * @param expression    String expression to search for, if null throws exception
      * @param sensitive     Boolean parameter, if true - searching wil be case sensitive,
      *                      else case insensitive. Default value is false.
+     * @throws ServiceFailureException If parameters does not meet conditions
      */
-    public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String expression, boolean sensitive) {
+    public SearchInSpreadSheetImpl(SpreadSheet spreadSheet, String expression, boolean sensitive) throws ServiceFailureException {
+        validate(spreadSheet, expression);
         this.spreadSheet = spreadSheet;
         this.expression = expression.trim();
         this.sensitive = sensitive;
     }
-
+    
+    private void validate(SpreadSheet spreadSheet, String expression) throws ServiceFailureException {
+        if(spreadSheet == null) {
+            throw new ServiceFailureException("Null spread sheet to be searched");
+        }
+        
+        if(expression == null) {
+            throw new ServiceFailureException("Null expression");
+        }
+        
+        if(expression.compareTo("") == 0) {
+            throw new ServiceFailureException("Empty expression");
+        }
+    }
 }

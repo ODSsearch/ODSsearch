@@ -159,11 +159,18 @@ public class SearchInSpreadSheetImplTest {
         assertEquals("VB001", foundSubject.get(1));
     }
     
-    @Test
+    @Test (expected = ServiceFailureException.class)
     public void nullSpreadSheetTest() throws ServiceFailureException {
         searcher = new SearchInSpreadSheetImpl(null, "001", true);
-        
-        expectedException.expect(ServiceFailureException.class);
-        searcher.searchAllSheets();
-    }    
+    }
+
+    @Test (expected = ServiceFailureException.class)
+    public void nullExpressionTest() throws ServiceFailureException {
+        searcher = new SearchInSpreadSheetImpl(spreadSheet, null, true);
+    }      
+    
+    @Test (expected = ServiceFailureException.class)
+    public void emptyExpressionTest() throws ServiceFailureException {
+        searcher = new SearchInSpreadSheetImpl(spreadSheet, "", true);
+    } 
 }
