@@ -11,7 +11,8 @@ public interface SearchInSpreadSheet {
      * Searches all sheets of a file for a given expression.
      *
      * @return  list of Result objects. If no results found in the whole file - empty list returned.
+     * @throws cz.muni.fi.pb138.odssearch.ServiceFailureException in case of null spreadSheet
      */
-    List<Result> searchAllSheets();
+    List<Result> searchAllSheets() throws ServiceFailureException;
 
 }

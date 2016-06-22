@@ -64,7 +64,12 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     }
 
     @Override
-    public List<Result> searchAllSheets(){
+    public List<Result> searchAllSheets() throws ServiceFailureException {
+        
+        if(spreadSheet == null) {
+            throw new ServiceFailureException("Null spread sheet to be searched");
+        }
+        
         if (sensitive){
             for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
                 results.add(searchSheetSensitive(spreadSheet.getSheet(i)));
