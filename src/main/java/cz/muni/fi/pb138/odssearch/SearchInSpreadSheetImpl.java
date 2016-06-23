@@ -18,7 +18,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
     private boolean sensitive = false;
 
     private int getColumnCount(Sheet sheet){
-        int columnCount = 0;
+        int columnCount = 1;
         while (columnCount < sheet.getColumnCount() && !sheet.getValueAt(columnCount,0).toString().isEmpty()){
             columnCount++;
         }
