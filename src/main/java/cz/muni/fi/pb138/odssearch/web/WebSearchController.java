@@ -17,21 +17,37 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Web Search Controller class is used for creating a web form used for full text search in ODS files
+ */
 @Controller
 public class WebSearchController {
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public String searchForm(Model model) {
 
         return "uploadForm";
     }
 
+    /**
+     *
+     * @param searchExpression
+     * @param file
+     * @param caseSensitive
+     * @param redirectAttributes
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(method = RequestMethod.POST, value = "/")
     public String handleSearchForm(@RequestParam("searchExpression") String searchExpression,
                                    @RequestParam("file") MultipartFile file,
                                    @RequestParam(value = "caseSensitive", required = false) boolean caseSensitive,
                                    RedirectAttributes redirectAttributes) throws IOException {
-
 
         if (!file.isEmpty()) {
             try {
@@ -50,7 +66,13 @@ public class WebSearchController {
         return "redirect:/";
     }
 
-
+    /**
+     *
+     * @param multipart
+     * @return
+     * @throws IllegalStateException
+     * @throws IOException
+     */
     private File multipartToFile(MultipartFile multipart) throws IllegalStateException, IOException {
         File convFile = new File(multipart.getOriginalFilename());
         convFile.createNewFile();

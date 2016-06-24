@@ -58,7 +58,7 @@
             <li th:each="result : ${results}">
                 <span th:text="${result.sheetName} +': '+ ${#lists.size(result.rows)}"></span>
                 <table class="table">
-                    <tr>
+                    <tr th:if="${#lists.size(result.rows)} > 0">
                         <th th:each="item: ${result.header}" th:text="${item}"></th>
                     </tr>
                     <tr th:each="row: ${result.rows}">
