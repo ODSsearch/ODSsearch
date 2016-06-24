@@ -1,2 +1,0 @@
-
-printSheet -> parameter cislo sheetu
