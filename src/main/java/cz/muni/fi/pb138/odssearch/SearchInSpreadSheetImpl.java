@@ -111,6 +111,7 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
             throw new ServiceFailureException("Null expression");
         }
         
+        expression = expression.trim();
         if(expression.compareTo("") == 0) {
             throw new ServiceFailureException("Empty expression");
         }

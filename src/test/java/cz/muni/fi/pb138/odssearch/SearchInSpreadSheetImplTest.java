@@ -172,7 +172,12 @@ public class SearchInSpreadSheetImplTest {
     @Test (expected = ServiceFailureException.class)
     public void emptyExpressionTest() throws ServiceFailureException {
         searcher = new SearchInSpreadSheetImpl(spreadSheet, "", true);
-    } 
+    }
+    
+    @Test (expected = ServiceFailureException.class)
+    public void spaceExpressionTest() throws ServiceFailureException {
+        searcher = new SearchInSpreadSheetImpl(spreadSheet, " ", true);
+    }
     
     @Test
     public void headerTest() throws ServiceFailureException {
