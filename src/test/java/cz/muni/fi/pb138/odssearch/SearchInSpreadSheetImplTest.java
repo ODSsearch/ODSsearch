@@ -173,4 +173,18 @@ public class SearchInSpreadSheetImplTest {
     public void emptyExpressionTest() throws ServiceFailureException {
         searcher = new SearchInSpreadSheetImpl(spreadSheet, "", true);
     } 
+    
+    @Test
+    public void headerTest() throws ServiceFailureException {
+        searcher = new SearchInSpreadSheetImpl(spreadSheet, "0", true);
+        List<Result> result = searcher.searchAllSheets();
+        
+        assertEquals(1, result.size());
+        
+        List<String> header = result.get(0).getHeader();
+        assertEquals(3, header.size());
+        assertEquals("ID", header.get(0));
+        assertEquals("Subject", header.get(1));
+        assertEquals("Grade", header.get(2));
+    }
 }
