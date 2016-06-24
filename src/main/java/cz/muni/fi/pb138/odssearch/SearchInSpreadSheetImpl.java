@@ -70,18 +70,24 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         }
         return result;
     }
-    
+
+    boolean isValid(Sheet sheet){
+        int headerLen = String.join("", getRow(0,sheet)).trim().length();
+        return  (headerLen > 0);
+    }
+
     @Override
     public List<Result> searchAllSheets() throws ServiceFailureException {
-        
         if (sensitive){
             for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
-                results.add(searchSheetSensitive(spreadSheet.getSheet(i)));
+                Sheet sheet = spreadSheet.getSheet(i);
+                if (isValid(sheet)) results.add(searchSheetSensitive(sheet));
             }
         }
         else {
             for (int i = 0; i < spreadSheet.getSheetCount(); i++) {
-                results.add(searchSheetInsensitive(spreadSheet.getSheet(i)));
+                Sheet sheet = spreadSheet.getSheet(i);
+                if (isValid(sheet)) results.add(searchSheetInsensitive(sheet));
             }
         }
         return Collections.unmodifiableList(results);
@@ -101,16 +107,16 @@ public class SearchInSpreadSheetImpl implements SearchInSpreadSheet {
         this.expression = expression.trim();
         this.sensitive = sensitive;
     }
-    
+
     private void validate(SpreadSheet spreadSheet, String expression) throws ServiceFailureException {
         if(spreadSheet == null) {
             throw new ServiceFailureException("Null spread sheet to be searched");
         }
-        
+
         if(expression == null) {
             throw new ServiceFailureException("Null expression");
         }
-        
+
         expression = expression.trim();
         if(expression.compareTo("") == 0) {
             throw new ServiceFailureException("Empty expression");

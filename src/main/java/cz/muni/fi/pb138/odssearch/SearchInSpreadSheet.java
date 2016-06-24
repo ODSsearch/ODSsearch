@@ -8,9 +8,10 @@ import java.util.List;
  */
 public interface SearchInSpreadSheet {
     /**
-     * Searches all sheets of a file for a given expression.
+     * Searches all valid sheets of a file for a given expression. Sheet is valid if its header is
+     * valid (at least second cell is nonempty).
      *
-     * @return  list of Result objects. If no results found in the whole file - empty list returned.
+     * @return  list of Result objects.
      * @throws cz.muni.fi.pb138.odssearch.ServiceFailureException in case of null spreadSheet
      */
     List<Result> searchAllSheets() throws ServiceFailureException;
