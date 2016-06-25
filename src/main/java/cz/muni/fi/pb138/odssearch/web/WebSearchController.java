@@ -24,24 +24,23 @@ import java.util.List;
 public class WebSearchController {
 
     /**
-     *
-     * @param model
-     * @return
+     * Handling form's GET request.
+     * @param model Model interface
+     * @return      Return template
      */
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public String searchForm(Model model) {
-
         return "uploadForm";
     }
 
     /**
-     *
-     * @param searchExpression
-     * @param file
-     * @param caseSensitive
-     * @param redirectAttributes
-     * @return
-     * @throws IOException
+     * Handling form's POST request.
+     * @param searchExpression      Searched term given from Web form
+     * @param file                  File in which given expression should be searched
+     * @param caseSensitive         Boolean variable if search should be case in/sensitive
+     * @param redirectAttributes    Attributes for the presentation part
+     * @return                      Return redirect
+     * @throws IOException          If parameters does not meet conditions
      */
     @RequestMapping(method = RequestMethod.POST, value = "/")
     public String handleSearchForm(@RequestParam("searchExpression") String searchExpression,
@@ -55,24 +54,24 @@ public class WebSearchController {
                 SearchInSpreadSheet spreadSheet = new SearchInSpreadSheetImpl(SpreadSheet.createFromFile(source), searchExpression, caseSensitive);
 
                 List<Result> results = spreadSheet.searchAllSheets();
+                if (caseSensitive) {
+                    redirectAttributes.addFlashAttribute("searchExpression", "Searched expression (case sensitive): " + searchExpression);
+                } else {
+                    redirectAttributes.addFlashAttribute("searchExpression", "Searched expression (case insensitive): " + searchExpression);
+                }
                 redirectAttributes.addFlashAttribute("results", results);
 
+            } catch (NullPointerException e) {
+                redirectAttributes.addFlashAttribute("message", "Search failed " + searchExpression + " => file type is not *.ods");
             } catch (Exception e) {
-                redirectAttributes.addFlashAttribute("message", "You failed to search " + searchExpression + " => " + e.getMessage());
+                redirectAttributes.addFlashAttribute("message", "Search failed " + searchExpression + " => " + e.getMessage());
             }
         } else {
-            redirectAttributes.addFlashAttribute("message", "You failed to search " + searchExpression + " because the file was empty");
+            redirectAttributes.addFlashAttribute("message", "Search failed " + searchExpression + " because the file was empty");
         }
         return "redirect:/";
     }
 
-    /**
-     *
-     * @param multipart
-     * @return
-     * @throws IllegalStateException
-     * @throws IOException
-     */
     private File multipartToFile(MultipartFile multipart) throws IllegalStateException, IOException {
         File convFile = new File(multipart.getOriginalFilename());
         convFile.createNewFile();
