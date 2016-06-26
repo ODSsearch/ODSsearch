@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="cz">
+    <info >
+        <title>ODSsearch - Závěrečná zpráva</title>
+        <author>
+            <personname>Karolína Božková</personname>
+            <email>422243@mail.muni.cz</email>
+        </author>
+    </info>
+    
+    <section>
+        <title>Úvod</title>
+        <para>Zadáním bylo vytvořit jednoduchou webovou aplikaci, která bude prohledávat 
+            předložený Open Document Spreadsheet soubor (*.ods) pro daný výraz a na výstup 
+            vypsat pro každý list všechny řádky, jež hledaný výraz obsahují.</para>
+    </section>
+    <section>
+        <title>Řešení</title>
+        <para>Mým úkolem bylo pro aplikaci naprogramovat a zdokumentovat backend. Ten se 
+            skládá hlavně ze dvou tříd - SearchInSpreadSheet a Result. </para>
+        <para>Třída SearchInSpreadSheet prohledává všechny listy poskytnutého dokumentu pro
+            hledaný výraz. Je možné nastavit, zda hledání má či nemá rozlišovat
+            velikost písmen. </para>
+        <para>Třída Result představuje nalezené řádky v jednom listu dokumentu. 
+            Obsahuje název listu, hlavičku tabulky a řádky obsahující hledaný výraz. </para>
+        <para>Pro manipulaci s dokumentem jsem použila knihovnu jOpenDocument.</para>
+        <para>Jako součást backendu jsem také naprogramovala jednoduché konzolové rozhraní, 
+            realizované třídou Main. Při vývoji  bylo užitečné hlavně pro kontrolu 
+            chování backendu v době kdy nebylo k dispozici rozhraní webové a ani testy.</para>
+    </section>
+    <section>
+        <title>Závěr</title>
+        <para>O celkovém chování aplikace jsme rozhodovali v podstatě kolektivně. 
+            Každý člen týmu měl přidělenou vlastní část projektu za kterou zodpovídal 
+            a kterou tak mohl dělat nezávisle na ostatních.</para>
+    </section>
+</article>
