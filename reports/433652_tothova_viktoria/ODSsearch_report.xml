@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+
+    <info >
+        <title>ODSsearch - Záverečná správa</title>
+        <author>
+            <personname>Viktória Tóthová</personname>
+            <email>433652@mail.muni.cz</email>
+        </author>
+    </info>
+    
+    <section>
+        <title>Úvod</title>
+        <para>
+            Našou úlohou bolo vytvoriť jednoduchú webovú aplikáciu, ktorá bude prehľadávať 
+            predložený Open Document Spreadsheet súbor (*.ods) pre daný výraz
+            a na výstup vypísať pre každý list všetky riadky, ktoré hľadaný výraz obsahujú.
+        </para>
+    </section>
+    <section>
+        <title>Riešenie</title>
+        <para>Založila som na GitHube organizáciu a na nej repozitár pre projekt.
+        Udelila som práva vývojárom a vedúcim predmetu.
+        Vytvorila som Wiki stránky pre projekt a behom vývoja som ich aktualizovala a spravovala.</para>
+        <para>Projekt som upravila tak aby využíval nástroj na správu buildov, Maven. 
+            Podielala som sa návrhu entitného modelu aplikácie.</para>
+        <para>Podielala som sa na programovaní backendu. 
+            Presadzovala som programovací princíp loose coupling.
+            Refaktorovala som kód a robila som code review.</para>
+        <para>Počas vývoja som presadzovala ďalšie rozšírenia aplikácie. 
+            Niektoré však presahovali rámec tohto predmetu a preto neboli implementované.
+            Príkladom je rozšírenie filtrovanie výsledkov na základe hlavičky tabuľky.</para>
+        <para>Podielala som sa na tvorbe prezentácie pre finálnu obhajobu projektu.</para>
+    </section>
+    <section>
+        <title>Záver</title>
+        <para>
+            O celkovom správaní aplikácie sme rozhodovali kolektívne. 
+            Každý člen týmu mal pridelenú vlastnú časť projektu, za ktorú bol zodpovedný,
+            a na ktorej mohol pracovať nezávisle na ostatných.
+        </para>
+    </section>
+
+
+</article>
